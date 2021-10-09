@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <link href="./css/main.css" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="shortcut icon" href="/images/task.png" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+    integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  <style>
+    body {
+      font-family: 'Poppins';
+      font-size: 18px;
+    }
+  </style>
+  <title>Project Management</title>
+
+</head>
+
+<body id="top" onload=reloadTaskCard()>
+
+  <!-- Modal -->
+  <div class="modal fade" id="newcardmodel" tabindex="-1" aria-labelledby="newCardModelLabel" aria-hidden="true"
+    style="font-size: 16px; border-color: dodgerblue;">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel" style="color: dodgerblue; font-weight: 600;">Add New Project</h5>
+          <button type="button" class="btn-close btn-close-blue" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="imageUrl" class="form-label">Image Url</label>
+            <input type="url" class="form-control" id="imageUrl" placeholder="http://example.com/image.png">
+          </div>
+          <div class="mb-3">
+            <label for="taskTitle" class="form-label">Project Title</label>
+            <input type="text" class="form-control" id="taskTitle" placeholder="JS Website Development">
+          </div>
+          <div class="mb-3">
+            <label for="taskType" class="form-label">Project Type</label>
+            <input type="text" class="form-control" id="taskType" placeholder="Software">
+          </div>
+          <div class="mb-3">
+            <label for="taskDescription" class="form-label">Project Description</label>
+            <textarea class="form-control" id="taskDescription" rows="4" placeholder="Description..."></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+          <button type="button" class="btn btn-primary" onclick="addCard()" data-bs-dismiss="modal">Save
+            changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Header Components -->
+  <header class="bg-light" style="padding: 20px;">
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+      <div class="container-fluid"><a class="navbar-brand" href="#" style="color: dodgerblue; font-weight: 900;">Project Management</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto me-2">
+            <li class="nav-item"><a class="nav-link active" href="#"><b>Home</b></a></li>
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
+            <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          </ul><a class="btn btn-primary" href="#contact" style="border-radius: 20px;">&nbsp;&nbsp;Get
+            Started&nbsp;&nbsp;</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+
+  <section class="">
+    <div class="cover bg-light">
+      <div class="container px-2">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="mt-5 pt-lg-5">
+              <h1 class="intro-title marker" data-aos="fade-left" data-aos-delay="50">Your Success is Our Mission.
+              </h1>
+              <p class="lead fw-normal mt-4" data-aos="fade-up" data-aos-delay="100">On a very basic level, project management includes the planning, initiation, execution, monitoring, and closing of a project.</p>
+              <div class="mt-3" data-aos="fade-up" data-aos-delay="200"><a class="btn btn-primary shadow-sm mt-1 me-2"
+                  href="#contact">Get Sarted <i class="fas fa-arrow-right ms-1"></i></a><a
+                  class="btn btn-outline-secondary mt-1" data-bigpicture="{&quot;ytSrc&quot;: &quot;aqz-KE-bpKQ&quot;}"
+                  href="#"><i class="fas fa-play-circle me-1"></i> Watch Video</a></div>
+            </div>
+          </div>
+          <div class="col-lg-6 p-3 pe-lg-0" data-aos="fade-left" data-aos-delay="100"><img class="pt-2 img-fluid"
+              src="images/assest.png" alt="hello" /></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="">
+    <div class="section pt-3 pt-lg-5 px-2 px-lg-4" id="about">
+      <div class="container-narrow">
+        <div class="text-center mb-4">
+          <h2 class="marker marker-center">Manage Your Projects</h2>
+        </div>
+        <div class="text-center">
+          <p class="mx-auto mb-3" style="max-width:800px">"Once you have <span style="color: dodgerblue;">mastered time</span>, you will understand how true it is that most people overestimate what they can accomplish in a year - and underestimate what they can achieve in a decade!" <br> -- Tony Robbins --</p><br>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="card">
+                <div class="card-body" style="background-color: #f8f8f8;">
+                  <h5 class="card-title">Add a New Project Here</h5>
+
+                  <button class="btn btn-primary ml-auto" data-bs-toggle="modal" data-bs-target="#newcardmodel"
+                    style="border-radius: 20px;">
+                    <i class="fa fa-plus"></i>&nbsp;ADD NEW
+                  </button>
+
+                  <hr>
+                  <div class="row" id="taskContents">
+
+                  </div>
+                  <p class="card-text"></p>
+                  <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+  </section>
+  <br>
+  <br>
+  <main class="container">
+    <section>
+
+
+    </section>
+  </main>
+
+
+  <footer class="py-5 px-2 bg-light" id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-12 mb-3">
+          <div class="mb-3">
+            <div class="h4">Project Management</div>
+            <p class="text-muted">A Goal without a plan is just a wish.<br><hr>
+            </p>
+            <div class="social-nav">
+              <nav role="navigation">
+                <ul class="nav text-light">
+                  <li class="nav-item"><a class="nav-link" href="https://twitter.com/bkumaran_bk" title="Twitter"><i
+                        class="fab fa-twitter"></i><span class="menu-title sr-only">Twitter</span></a></li>
+                  <li class="nav-item"><a class="nav-link" href="https://github.com/bkumaranbk"
+                      title="Facebook"><i class="fab fa-github"></i><span
+                        class="menu-title sr-only">Facebook</span></a></li>
+                  <li class="nav-item"><a class="nav-link" href="https://www.instagram.com/kumaran_bk/"
+                      title="Instagram"><i class="fab fa-instagram"></i><span
+                        class="menu-title sr-only">Instagram</span></a></li>
+                  <li class="nav-item"><a class="nav-link" href="https://www.linkedin.com/in/balachandran-kumaran-4363361a8/" title="LinkedIn"><i
+                        class="fab fa-linkedin"></i><span class="menu-title sr-only">LinkedIn</span></a></li>
+                  <li class="nav-item"><a class="nav-link" href="https://www.behance.net/kumaranbk"
+                      title="Behance"><i class="fab fa-behance"></i><span class="menu-title sr-only">Behance</span></a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+
+          <div class="text-small text-muted">
+            <div class="mb-1">&copy; Copyright <a href="https://github.com/bkumaranbk" style="text-decoration: none"><strong>Kumaran bk</strong></a>. All rights reserved.</div>
+            <div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6 mb-3">
+          <div class="text-uppercase mb-2">Services</div>
+          <div class="nav flex-column"><a class="nav-link px-0" href="#!">Design</a><a class="nav-link px-0"
+              href="#!">Development</a><a class="nav-link px-0" href="#!">Branding</a><a class="nav-link px-0"
+              href="#!">Marketing</a></div>
+        </div>
+
+        <div class="col-lg-2 col-md-6 mb-3">
+          <div class="text-uppercase mb-2">Products</div>
+          <div class="nav flex-column"><a class="nav-link px-0" href="#!">Services</a><a class="nav-link px-0"
+              href="#!">Portfolio</a><a class="nav-link px-0" href="#!">Team</a><a class="nav-link px-0"
+              href="#!">Pricing</a></div>
+        </div>
+
+        <div class="col-lg-2 col-md-6 mb-3">
+          <div class="text-uppercase mb-2">About</div>
+          <div class="nav flex-column"><a class="nav-link px-0" href="#!">About</a><a class="nav-link px-0"
+              href="#!">Contact</a><a class="nav-link px-0" href="#!">Terms</a><a class="nav-link px-0"
+              href="#!">Privacy</a></div>
+        </div>
+
+        <div class="col-lg-2 col-md-6 mb-3">
+          <div class="text-uppercase mb-2">Contact Us</div>
+          <div class="text-small">
+            <address>
+              568, Hill Road<br />
+              Jaffna, NY 50032<br />
+              Srilanka
+            </address>
+            <div class="mb-1"><strong>Phone:</strong><br />+94-766-20-67-43</div>
+            <div class="mb-1"><strong>Email:</strong><br />bk@company.com</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+    crossorigin="anonymous"></script>
+  <script src="./index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+
+.card_shodow:hover {
+  box-shadow: 0 8px 16px 0 rgba(113, 100, 230, 0.2);
+  box-shadow: #0d6efd 0px 0px 0px 3px;
+}
+
+input:focus {
+  background-color: yellow;
+}
+
+.card-header{
+  background-color: rgb(255, 255, 255);
+}
+
+.card-title{
+  color: #0d6efd;
+}
+
+.hr{
+  color: #0d6efd;
+  height: 4px;
+  border-width:0;
+  background-color:#0d6efd;
+}
